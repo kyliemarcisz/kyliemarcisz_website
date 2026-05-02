@@ -292,6 +292,129 @@ footer{padding:1.3rem 2rem;background:#1A0E08;display:flex;align-items:center;ju
   .sw{padding:3rem 1rem;}
   .resume-sheet{padding:1.4rem 1.4rem;}
 }
+
+/* ── VISUAL REFRESH ── */
+
+/* Floating pill nav */
+nav{
+  top:16px;left:50%;transform:translateX(-50%);right:auto;
+  width:max-content;max-width:calc(100vw - 32px);
+  border-radius:100px;border-bottom:none;
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 6px 28px rgba(42,138,138,.13),0 2px 8px rgba(0,0,0,.06);
+  padding:9px 26px;
+  background:rgba(253,246,238,.88);
+  backdrop-filter:blur(18px) saturate(1.5);
+  -webkit-backdrop-filter:blur(18px) saturate(1.5);
+  transition:box-shadow .3s ease,background .3s ease;
+}
+nav:hover{box-shadow:0 10px 36px rgba(42,138,138,.18),0 2px 8px rgba(0,0,0,.07);}
+.nav-logo{font-size:1.25rem;}
+
+/* Hero — swap dot grid for soft blob glows */
+.hero-dots{display:none;}
+.hero-bg-pattern{
+  background-image:
+    radial-gradient(ellipse 65% 55% at 78% 28%,rgba(42,138,138,.16) 0%,transparent 62%),
+    radial-gradient(ellipse 55% 65% at 18% 78%,rgba(232,90,58,.11) 0%,transparent 56%),
+    radial-gradient(ellipse 45% 45% at 52% 52%,rgba(232,184,74,.09) 0%,transparent 58%),
+    radial-gradient(ellipse 38% 55% at 88% 82%,rgba(212,96,122,.08) 0%,transparent 52%),
+    radial-gradient(ellipse 30% 40% at 8% 20%,rgba(58,186,170,.1) 0%,transparent 50%);
+}
+
+/* Photo frame — iridescent gradient border */
+.photo-frame{
+  border:none;
+  padding:3px;
+  background:linear-gradient(135deg,#2A8A8A,#E8B84A,#E85A3A,#D4607A,#2A8A8A);
+  box-shadow:0 22px 50px rgba(42,138,138,.22),0 6px 20px rgba(0,0,0,.09);
+}
+.photo-frame img{border-radius:13px;}
+
+/* Hero CTA — pill + gradient */
+.hcta{
+  border-radius:100px;
+  background:linear-gradient(135deg,var(--teal),#3ABAAA);
+  box-shadow:0 6px 24px rgba(42,138,138,.36);
+  padding:.85rem 2.2rem;
+  border:none;
+}
+.hcta:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(42,138,138,.46);}
+
+/* Htags */
+.htag{border-radius:100px;}
+
+/* Section label accent line */
+.sl::before{content:'';display:inline-block;width:22px;height:1.5px;
+  background:var(--teal);vertical-align:middle;margin-right:8px;flex-shrink:0;}
+
+/* Timeline cards */
+.tlb{border-radius:14px;border:1px solid rgba(221,200,168,.65);
+  box-shadow:0 2px 12px rgba(42,138,138,.05);}
+.tlb:hover{border-color:var(--teal);box-shadow:0 8px 28px rgba(42,138,138,.14);transform:translateX(5px);}
+
+/* Involvement cards */
+.inv-card{border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.inv-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(42,138,138,.13);border-color:var(--teal);}
+
+/* Cal Hacks cards */
+.hack-card{border-radius:18px;border:1.5px solid rgba(221,200,168,.75);
+  box-shadow:0 4px 20px rgba(0,0,0,.06);}
+.hack-card:hover{box-shadow:0 14px 44px rgba(42,138,138,.16);transform:translateY(-7px);}
+
+/* Resume sheet */
+.resume-sheet{border-radius:18px;border:1px solid rgba(221,200,168,.6);
+  box-shadow:0 8px 40px rgba(0,0,0,.08),0 2px 8px rgba(0,0,0,.04);}
+
+/* Academics cards */
+.scard{border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.04);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.scard:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(42,138,138,.11);}
+.scard.sf{box-shadow:0 4px 20px rgba(42,138,138,.16);}
+
+/* Skills groups */
+.sg{border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;}
+.sg:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(42,138,138,.12);border-color:var(--teal);}
+
+/* Now cards */
+.nc{border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;}
+.nc:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(42,138,138,.14);border-color:var(--teal);}
+
+/* Vision board cards */
+.vbc{border-radius:8px;box-shadow:2px 3px 10px rgba(120,90,50,.14);
+  transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s ease;}
+.vbc:hover{transform:rotate(0deg) scale(1.04) !important;box-shadow:4px 8px 22px rgba(42,138,138,.18);}
+
+/* Badge floats */
+.badge-float{border-radius:100px;box-shadow:0 3px 14px rgba(0,0,0,.1);}
+
+/* Ribbon */
+.ribbon{border-top:1px solid rgba(221,200,168,.5);border-bottom:1px solid rgba(221,200,168,.5);
+  background:linear-gradient(90deg,var(--gold-pale),rgba(216,240,236,.5),var(--gold-pale));}
+
+/* Quote section */
+.quote-section{background:linear-gradient(135deg,#2A8A8A 0%,#3ABAAA 55%,#2A8A9A 100%);}
+
+/* Contact */
+.contact-bg{background:linear-gradient(135deg,#1A0E08 0%,#2A1810 50%,#1A0A10 100%);}
+
+/* Smoother reveal animation */
+.appear{opacity:0;transform:translateY(16px);
+  transition:opacity .65s cubic-bezier(.25,.46,.45,.94),transform .65s cubic-bezier(.25,.46,.45,.94);}
+.appear.in{opacity:1;transform:translateY(0);}
+
+/* Download button */
+.dl-btn{border-radius:100px;}
+
+/* Pill tags on Now section */
+.ntag{border-radius:100px;}
+
+@media(max-width:760px){
+  nav{top:10px;padding:8px 18px;border-radius:100px;}
+}
 </style>
 </head>
 <body>
@@ -654,10 +777,10 @@ footer{padding:1.3rem 2rem;background:#1A0E08;display:flex;align-items:center;ju
       <div class="scard appear"><div class="slab">☀️ Summer 2026</div>
         <div class="sc"><span class="cc">Math 53</span>Multivariable Calculus</div>
         <div class="sc"><span class="cc">Bio 1A</span>General Biology</div>
-        <div class="sc"><span class="cc">Psych</span>Psychology of Personality</div>
         <div class="sc"><span class="cc">IEOR</span>Ethical Decisions in Silicon Valley</div>
       </div>
       <div class="scard sf appear"><div class="slab" style="color:var(--teal);">⚡ Fall 2026 — Most excited</div>
+        <div class="sc"><span class="cc">EE 66</span>Intro to Circuitry and Design</div>
         <div class="sc"><span class="cc">EE 16B</span>Designing Info. Devices II</div>
         <div class="sc"><span class="cc">CS 61B</span>Data Structures</div>
         <div class="sc"><span class="cc" style="color:var(--teal);font-weight:700;">Mus 158A</span><span class="cnhl">Electronic Music @ CNMAT ✨</span></div>
