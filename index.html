@@ -435,6 +435,12 @@ nav:hover{box-shadow:0 10px 36px rgba(0,55,68,.18),0 2px 8px rgba(0,0,0,.07);}
 .proj-badge{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:1rem;display:inline-block;}
 .pb-green{background:rgba(0,55,68,.15);color:var(--teal2);border:1px solid rgba(0,55,68,.3);}
 .pb-rose{background:rgba(183,37,82,.15);color:#B72552;border:1px solid rgba(183,37,82,.3);}
+.pb-gold{background:rgba(254,137,130,.15);color:#B72552;border:1px solid rgba(254,137,130,.35);}
+.proj-shake::before{background:linear-gradient(90deg,#FE8982,#FFB562,#B72552);}
+.proj-nick::before{background:linear-gradient(90deg,#003744,#FE8982,#FFB562);}
+.proj-divider{grid-column:1/-1;display:flex;align-items:center;gap:.9rem;margin:.5rem 0 .3rem;}
+.proj-divider::before,.proj-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.12);}
+.proj-divider span{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap;}
 .proj-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:white;margin-bottom:.3rem;}
 .proj-sub{font-size:.7rem;color:rgba(255,255,255,.45);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem;}
 .proj-desc{font-size:.8rem;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:1.2rem;}
@@ -966,6 +972,43 @@ int8    : <span class="val">91.8% acc</span> · <span class="val">64 MB</span>  
         </div>
         <div class="proj-links">
           <a class="proj-link rose" href="https://github.com/kyliemarcisz/bert-quantization" target="_blank" rel="noopener">⬡ GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-divider"><span>✨ just for fun</span></div>
+
+      <!-- SHAKE N' BAKE -->
+      <div class="proj-card proj-shake appear">
+        <span class="proj-badge pb-gold">Personal · Voice AI</span>
+        <div class="proj-title">Shake N' Bake 🏁</div>
+        <div class="proj-sub">Alarm App · Cloudflare Pages · 2026</div>
+        <div class="proj-desc">Named after Talladega Nights — an alarm that refuses to let you fall back asleep. Pairs a real Spotify wake-up song with a voice that starts talking the second the alarm hits, about anything from the daily news to my version: the top 10 SF coffee shops on Beli and exactly what to order at each, with a downloadable PDF guide waiting once it's done talking.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">Cloudflare Pages</span>
+          <span class="proj-tag">Pages Functions</span>
+          <span class="proj-tag">Spotify IFrame API</span>
+          <span class="proj-tag">ElevenLabs TTS</span>
+          <span class="proj-tag">Vanilla JS</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://shake-n-bake.pages.dev" target="_blank" rel="noopener">↗ Live Site</a>
+          <a class="proj-link" href="https://shake-n-bake.pages.dev/app" target="_blank" rel="noopener">🏁 Try the Demo</a>
+        </div>
+      </div>
+
+      <!-- DAD'S 50TH BIRTHDAY SITE -->
+      <div class="proj-card proj-nick appear">
+        <span class="proj-badge pb-gold">Personal · For Dad</span>
+        <div class="proj-title">Nick at Fifty</div>
+        <div class="proj-sub">Birthday Tribute Site · 2026</div>
+        <div class="proj-desc">A surprise digital scrapbook I built for my dad's 50th birthday — "The Big 5-0." A multi-page tribute covering his life, interests (Steelers, CrossFit, skiing, the Portugal trip), and "The Nick Archives," a 30+ photo gallery, capped off with a closing tribute to him as a father, innovator, and athlete.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">HTML/CSS/JS</span>
+          <span class="proj-tag">Cloudflare Pages</span>
+          <span class="proj-tag">Custom Photo Gallery</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link rose" href="https://aa5b64d9.nick-50.pages.dev" target="_blank" rel="noopener">↗ Live Site</a>
         </div>
       </div>
 
