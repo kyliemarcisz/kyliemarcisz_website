@@ -1305,7 +1305,7 @@ document.querySelectorAll('.appear').forEach(el => obs.observe(el));
         className:'', iconSize:[28,28], iconAnchor:[14,14], popupAnchor:[0,-14]
       });
       L.marker([p.lat,p.lng],{icon:icon}).addTo(map)
-        .bindPopup('<strong style="font-family:'Fraunces',serif;color:#0D0D0D;">'+p.n+'</strong><br><span style="font-size:.75rem;color:#0D0D0D;">'+p.d+'</span>',{maxWidth:220});
+        .bindPopup('<strong style="font-family:Fraunces,serif;color:#0D0D0D;">'+p.n+'</strong><br><span style="font-size:.75rem;color:#0D0D0D;">'+p.d+'</span>',{maxWidth:220});
     });
   } catch(e) { console.warn('Leaflet failed to init:', e); }
 })();
