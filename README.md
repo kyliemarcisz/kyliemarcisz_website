@@ -8,22 +8,23 @@ Personal portfolio website for **Kylie Marcisz** — UC Berkeley engineer, hacka
 
 ## About
 
-This is a single-page personal website built with HTML and CSS. It includes:
+This is a personal website built with plain HTML and CSS, split across six pages that share a `style.css` and `common.js`:
 
-- **Hero** — intro, photo, and tags
-- **Travel Map** — interactive SVG map of countries visited
-- **Experience** — timeline of internships and research
-- **Involvement** — clubs, orgs, and campus activities
-- **Cal Hacks** — hackathon projects
-- **Vision Board** — goals for 2026 and beyond
-- **Contact** — email and LinkedIn
+- **`index.html` — Home** — hero intro and interactive world map
+- **`experience.html` — Experience** — professional timeline, campus involvement, and downloadable resume
+- **`research.html` — Research** — spatial audio work and Cal Hacks
+- **`portfolio.html` — Portfolio** — projects, academics, and skills
+- **`life.html` — Life** — photos and what she's currently into
+- **`goals.html` — Goals** — vision board
+
+Contact info lives in a shared footer on every page.
 
 ---
 
 ## Tech Stack
 
-- Pure HTML & CSS (no frameworks)
-- Google Fonts — Playfair Display, Nunito, Caveat
+- Pure HTML & CSS (no frameworks, no build step)
+- Google Fonts — Fraunces (headings), Comfortaa (everything else)
 - Deployed via **Cloudflare Pages**
 
 ---

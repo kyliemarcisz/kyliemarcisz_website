@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects, Academics & Skills — Kylie Marcisz</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" style="text-decoration:none;"><div class="nav-logo">✈ Kylie Marcisz</div></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="portfolio.html" class="nav-active">Portfolio</a></li>
+    <li><a href="life.html">Life</a></li>
+    <li><a href="goals.html">Goals</a></li>
+  </ul>
+</nav>
+
+<section class="proj-bg" id="projects">
+  <div class="sw">
+    <div class="tc"><div class="sl">⚙ code & research</div><h2 class="st">AI <em>projects</em></h2></div>
+    <div class="proj-grid">
+
+      <!-- MNIST QUANTIZATION -->
+      <div class="proj-card proj-mnist appear">
+        <span class="proj-badge pb-green">Machine Learning · Compression</span>
+        <div class="proj-title">MNIST Quantization</div>
+        <div class="proj-sub">Float64 → Float32 → Float16 → Int8</div>
+        <div class="proj-desc">A deep dive into model compression — taking a hand-trained MLP classifier on MNIST and systematically compressing its weights through every precision level. Shipped as a Flask web app so anyone can upload a digit and see the model's confidence shift across precisions in real time.</div>
+
+        <div class="proj-terminal">
+<span class="dim"># compression results on MNIST test set</span>
+float64 → <span class="val">97.8% acc</span>  <span class="dim">baseline</span>
+float32 → <span class="val">97.8% acc</span>  <span class="dim">lossless</span>
+float16 → <span class="val">97.6% acc</span>  <span class="dim">-0.2%</span>
+int8    → <span class="err">84.2% acc</span>  <span class="dim">range saturation</span>
+        </div>
+
+        <div class="proj-metrics">
+          <div class="proj-metric">
+            <div class="proj-metric-val">4×</div>
+            <div class="proj-metric-lbl">size reduction (int8)</div>
+          </div>
+          <div class="proj-metric">
+            <div class="proj-metric-val">97.8%</div>
+            <div class="proj-metric-lbl">peak accuracy</div>
+          </div>
+          <div class="proj-metric rose">
+            <div class="proj-metric-val rose">−13.6%</div>
+            <div class="proj-metric-lbl">int8 accuracy drop</div>
+          </div>
+        </div>
+
+        <div class="proj-progress">
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">float64</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:97.8%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
+            <span class="proj-progress-val">97.8%</span>
+          </div>
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">float32</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:97.8%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
+            <span class="proj-progress-val">97.8%</span>
+          </div>
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">float16</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:97.6%;background:linear-gradient(90deg,#819FA7,#819FA7);"></div></div>
+            <span class="proj-progress-val">97.6%</span>
+          </div>
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">int8</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:84.2%;background:linear-gradient(90deg,#5B6E74,#5B6E74);"></div></div>
+            <span class="proj-progress-val">84.2%</span>
+          </div>
+        </div>
+
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">scikit-learn</span>
+          <span class="proj-tag">NumPy</span>
+          <span class="proj-tag">Flask</span>
+          <span class="proj-tag">MLP Classifier</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://github.com/kyliemarcisz/mnist-quantization" target="_blank" rel="noopener">⬡ GitHub</a>
+          <a class="proj-link" href="https://github.com/kyliemarcisz/mnist-quantization" target="_blank" rel="noopener">↗ Live Demo</a>
+        </div>
+      </div>
+
+      <!-- BERT QUANTIZATION -->
+      <div class="proj-card proj-bert appear">
+        <span class="proj-badge pb-rose">NLP · Transformer Compression</span>
+        <div class="proj-title">BERT Quantization</div>
+        <div class="proj-sub">DistilBERT Float32 → Int8 · Sentiment Analysis</div>
+        <div class="proj-desc">Dynamic post-training quantization of DistilBERT for movie review sentiment classification. Used PyTorch's quantization toolkit to convert all linear layers to int8 — benchmarked against the float32 baseline on accuracy, model size, and inference latency. 4× smaller, near-identical performance.</div>
+
+        <div class="proj-terminal">
+<span class="dim"># distilbert quantization benchmark</span>
+model   : <span class="val">distilbert-base-uncased</span>
+task    : <span class="val">sentiment (pos/neg)</span>
+float32 : <span class="val">92.4% acc</span> · <span class="val">255 MB</span>
+int8    : <span class="val">91.8% acc</span> · <span class="val">64 MB</span>  <span class="dim">✓ 4× compression</span>
+        </div>
+
+        <div class="proj-metrics">
+          <div class="proj-metric">
+            <div class="proj-metric-val">4×</div>
+            <div class="proj-metric-lbl">model size reduction</div>
+          </div>
+          <div class="proj-metric">
+            <div class="proj-metric-val">91.8%</div>
+            <div class="proj-metric-lbl">int8 accuracy</div>
+          </div>
+          <div class="proj-metric rose">
+            <div class="proj-metric-val">64 MB</div>
+            <div class="proj-metric-lbl">compressed size</div>
+          </div>
+        </div>
+
+        <div class="proj-progress">
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">Accuracy</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:92.4%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
+            <span class="proj-progress-val">92.4%</span>
+          </div>
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">Int8 acc</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:91.8%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
+            <span class="proj-progress-val">91.8%</span>
+          </div>
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">Size (f32)</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:100%;background:linear-gradient(90deg,#5B6E74,#5B6E74);"></div></div>
+            <span class="proj-progress-val">255 MB</span>
+          </div>
+          <div class="proj-progress-row">
+            <span class="proj-progress-lbl">Size (i8)</span>
+            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:25%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
+            <span class="proj-progress-val">64 MB</span>
+          </div>
+        </div>
+
+        <div class="proj-stack">
+          <span class="proj-tag">PyTorch</span>
+          <span class="proj-tag">Hugging Face</span>
+          <span class="proj-tag">DistilBERT</span>
+          <span class="proj-tag">Transformers</span>
+          <span class="proj-tag">Dynamic Quantization</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link rose" href="https://github.com/kyliemarcisz/bert-quantization" target="_blank" rel="noopener">⬡ GitHub</a>
+        </div>
+      </div>
+
+      <div class="proj-divider"><span>✨ just for fun</span></div>
+
+      <!-- SHAKE N' BAKE -->
+      <div class="proj-card proj-shake appear">
+        <span class="proj-badge pb-gold">Personal · Voice AI</span>
+        <div class="proj-title">Shake N' Bake 🏁</div>
+        <div class="proj-sub">Alarm App · Cloudflare Pages · 2026</div>
+        <div class="proj-desc">Named after Talladega Nights — an alarm that refuses to let you fall back asleep. Pairs a real Spotify wake-up song with a voice that starts talking the second the alarm hits, about anything from the daily news to my version: the top 10 SF coffee shops on Beli and exactly what to order at each, with a downloadable PDF guide waiting once it's done talking.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">Cloudflare Pages</span>
+          <span class="proj-tag">Pages Functions</span>
+          <span class="proj-tag">Spotify IFrame API</span>
+          <span class="proj-tag">ElevenLabs TTS</span>
+          <span class="proj-tag">Vanilla JS</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://shake-n-bake.pages.dev" target="_blank" rel="noopener">↗ Live Site</a>
+          <a class="proj-link" href="https://shake-n-bake.pages.dev/app" target="_blank" rel="noopener">🏁 Try the Demo</a>
+        </div>
+      </div>
+
+      <!-- DAD'S 50TH BIRTHDAY SITE -->
+      <div class="proj-card proj-nick appear">
+        <span class="proj-badge pb-gold">Personal · For Dad</span>
+        <div class="proj-title">Nick at Fifty</div>
+        <div class="proj-sub">Birthday Tribute Site · 2026</div>
+        <div class="proj-desc">A surprise digital scrapbook I built for my dad's 50th birthday — "The Big 5-0." A multi-page tribute covering his life, interests (Steelers, CrossFit, skiing, the Portugal trip), and "The Nick Archives," a 30+ photo gallery, capped off with a closing tribute to him as a father, innovator, and athlete.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">HTML/CSS/JS</span>
+          <span class="proj-tag">Cloudflare Pages</span>
+          <span class="proj-tag">Custom Photo Gallery</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link rose" href="https://aa5b64d9.nick-50.pages.dev" target="_blank" rel="noopener">↗ Live Site</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="acad-bg" id="academics">
+  <div class="sw">
+    <div class="tc"><div class="sl">🎓 coursework</div><h2 class="st">Academic <em>adventure</em></h2></div>
+    <div class="acad-grid">
+      <div class="scard appear"><div class="slab">📚 Fall 2025</div>
+        <div class="sc"><span class="cc">CS 10A</span>Beauty & Joy of Computing</div>
+        <div class="sc"><span class="cc">R1B</span>French Literature</div>
+        <div class="sc"><span class="cc">Math 52</span>Integral Calculus</div>
+      </div>
+      <div class="scard appear"><div class="slab">🌸 Spring 2026</div>
+        <div class="sc"><span class="cc">CS 61A</span>Structure of Computer Programs</div>
+        <div class="sc"><span class="cc">Phys 7A</span>Physics for Scientists</div>
+        <div class="sc"><span class="cc">Math 54</span>Linear Algebra & Diff. Eqs</div>
+      </div>
+      <div class="scard appear"><div class="slab">☀️ Summer 2026</div>
+        <div class="sc"><span class="cc">Math 53</span>Multivariable Calculus</div>
+        <div class="sc"><span class="cc">IEOR</span>Ethical Decisions in Silicon Valley</div>
+      </div>
+      <div class="scard sf appear"><div class="slab" style="color:var(--teal);">⚡ Fall 2026 — Most excited</div>
+        <div class="sc"><span class="cc">EE 66</span>Intro to Circuitry and Design</div>
+        <div class="sc"><span class="cc">Chem 1A</span>General Chemistry</div>
+        <div class="sc"><span class="cc" style="color:var(--teal);font-weight:700;">Mus 158A</span><span class="cnhl">Electronic Music @ CNMAT ✨</span></div>
+        <div class="cnote">CNMAT is where audio engineering meets art and research. This is the class I've been building toward.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills-bg" id="skills">
+  <div class="sw">
+    <div class="tc"><div class="sl">✦ toolkit</div><h2 class="st">Skills &amp; <em>superpowers</em></h2></div>
+    <div class="skills-grid">
+      <div class="sg appear"><div class="sgl">🖥 Languages</div><div class="pills"><span class="pill pt">Python</span><span class="pill pt">SQL</span><span class="pill pt">Scheme</span><span class="pill pg">French ✦</span></div></div>
+      <div class="sg appear"><div class="sgl">🔊 Audio & Signal</div><div class="pills"><span class="pill pt">Web Audio API</span><span class="pill pt">3D Spatial Audio</span><span class="pill pt">DSP</span><span class="pill pt">ASAF</span><span class="pill pt">Array Beamforming</span></div></div>
+      <div class="sg appear"><div class="sgl">⚙️ Engineering</div><div class="pills"><span class="pill pg">OOP</span><span class="pill pg">Data Structures</span><span class="pill pg">Algorithms</span><span class="pill pg">AI Audio</span><span class="pill pg">Soldering</span></div></div>
+      <div class="sg appear"><div class="sgl">📊 Strategy & Leadership</div><div class="pills"><span class="pill pc">Consulting (BSG)</span><span class="pill pc">Hackathon Ops</span><span class="pill pc">Affiliate Marketing</span><span class="pill pc">McKinsey Forward</span><span class="pill pc">UpSync Consulting</span></div></div>
+      <div class="sg appear"><div class="sgl">🏅 Certifications <span style="font-size:.7rem;color:var(--muted);font-family:'Comfortaa',sans-serif;">Summer '26</span></div><div class="pills"><span class="pill px">McKinsey Forward</span></div></div>
+      <div class="sg appear"><div class="sgl">✈️ Beyond the Lab</div><div class="pills"><span class="pill ps">16 Countries</span><span class="pill ps">Trail Running</span><span class="pill ps">Skiing</span><span class="pill ps">Poetry</span><span class="pill ps">Coffee ✦</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-bg" id="contact">
+  <div class="sw">
+    <div class="ci">
+      <div class="sl">✦ send a postcard</div>
+      <h2>Let's <em>connect</em></h2>
+      <p>Whether it's spatial audio, consulting, hackathon chaos, or just comparing travel notes — my inbox is always open.</p>
+      <div class="clinks">
+        <a href="mailto:kyliemarcisz@berkeley.edu" class="clink clp">✉ kyliemarcisz@berkeley.edu</a>
+        <a href="http://www.linkedin.com/in/kylie-marcisz-ucb29" class="clink cls">LinkedIn ↗</a>
+        <a href="#" class="clink cls">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fh">© 2026 Kylie Marcisz</span>
+  <span>Berkeley, CA · 16 countries · 1 passport · still counting ✈</span>
+</footer>
+
+<script src="common.js"></script>
+<script>
+/* ── Animated progress bars ── */
+  document.querySelectorAll('.proj-progress-fill').forEach(function(b){
+    b.dataset.tw=b.style.width||'0%'; b.style.width='0%'; b.style.transition='none';
+  });
+  var barObs=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.proj-progress-fill').forEach(function(b,i){
+        setTimeout(function(){ b.style.transition='width 1.3s cubic-bezier(.25,.46,.45,.94)'; b.style.width=b.dataset.tw; },i*140+80);
+      });
+      barObs.unobserve(e.target);
+    }
+  });},{threshold:.25});
+  document.querySelectorAll('.proj-progress').forEach(function(p){barObs.observe(p);});
+
+  /* ── Terminal line-by-line reveal ── */
+  function revealTerminal(t){
+    if(t.dataset.typed) return; t.dataset.typed='1';
+    var lines=t.innerHTML.trim().split('\n').filter(function(l){return l.trim()!=='';});
+    t.innerHTML=lines.map(function(l,i){
+      return '<span class="t-line" style="animation-delay:'+(i*.16)+'s">'+l+'</span>';
+    }).join('');
+  }
+  var termObs=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){revealTerminal(e.target); termObs.unobserve(e.target);}
+  });},{threshold:.3});
+  document.querySelectorAll('.proj-terminal').forEach(function(t){termObs.observe(t);});
+
+  
+</script>
+</body>
+</html>
