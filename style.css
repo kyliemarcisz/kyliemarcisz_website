@@ -429,6 +429,8 @@ nav:hover{box-shadow:0 10px 36px rgba(91,110,116,.18),0 2px 8px rgba(13,13,13,.0
 .pb-gold{background:rgba(129,159,167,.15);color:#5B6E74;border:1px solid rgba(129,159,167,.35);}
 .proj-shake::before{background:linear-gradient(90deg,#819FA7,#819FA7,#5B6E74);}
 .proj-nick::before{background:linear-gradient(90deg,#5B6E74,#819FA7,#819FA7);}
+.proj-down::before{background:linear-gradient(90deg,var(--gold2),var(--teal2),var(--gold2));}
+.proj-photo{width:100%;max-height:220px;object-fit:cover;border-radius:10px;margin-bottom:1rem;display:block;}
 .proj-divider{grid-column:1/-1;display:flex;align-items:center;gap:.9rem;margin:.5rem 0 .3rem;}
 .proj-divider::before,.proj-divider::after{content:'';flex:1;height:1px;background:rgba(242,242,240,.12);}
 .proj-divider span{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,242,240,.55);white-space:nowrap;}
