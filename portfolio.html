@@ -24,139 +24,8 @@
 
 <section class="proj-bg" id="projects">
   <div class="sw">
-    <div class="tc"><div class="sl">⚙ code & research</div><h2 class="st">AI <em>projects</em></h2></div>
+    <div class="tc"><div class="sl">⚙ code & research</div><h2 class="st"><em>Projects</em></h2></div>
     <div class="proj-grid">
-
-      <!-- MNIST QUANTIZATION -->
-      <div class="proj-card proj-mnist appear">
-        <span class="proj-badge pb-green">Machine Learning · Compression</span>
-        <div class="proj-title">MNIST Quantization</div>
-        <div class="proj-sub">Float64 → Float32 → Float16 → Int8</div>
-        <div class="proj-desc">A deep dive into model compression — taking a hand-trained MLP classifier on MNIST and systematically compressing its weights through every precision level. Shipped as a Flask web app so anyone can upload a digit and see the model's confidence shift across precisions in real time.</div>
-
-        <div class="proj-terminal">
-<span class="dim"># compression results on MNIST test set</span>
-float64 → <span class="val">97.8% acc</span>  <span class="dim">baseline</span>
-float32 → <span class="val">97.8% acc</span>  <span class="dim">lossless</span>
-float16 → <span class="val">97.6% acc</span>  <span class="dim">-0.2%</span>
-int8    → <span class="err">84.2% acc</span>  <span class="dim">range saturation</span>
-        </div>
-
-        <div class="proj-metrics">
-          <div class="proj-metric">
-            <div class="proj-metric-val">4×</div>
-            <div class="proj-metric-lbl">size reduction (int8)</div>
-          </div>
-          <div class="proj-metric">
-            <div class="proj-metric-val">97.8%</div>
-            <div class="proj-metric-lbl">peak accuracy</div>
-          </div>
-          <div class="proj-metric rose">
-            <div class="proj-metric-val rose">−13.6%</div>
-            <div class="proj-metric-lbl">int8 accuracy drop</div>
-          </div>
-        </div>
-
-        <div class="proj-progress">
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">float64</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:97.8%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
-            <span class="proj-progress-val">97.8%</span>
-          </div>
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">float32</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:97.8%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
-            <span class="proj-progress-val">97.8%</span>
-          </div>
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">float16</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:97.6%;background:linear-gradient(90deg,#819FA7,#819FA7);"></div></div>
-            <span class="proj-progress-val">97.6%</span>
-          </div>
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">int8</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:84.2%;background:linear-gradient(90deg,#5B6E74,#5B6E74);"></div></div>
-            <span class="proj-progress-val">84.2%</span>
-          </div>
-        </div>
-
-        <div class="proj-stack">
-          <span class="proj-tag">Python</span>
-          <span class="proj-tag">scikit-learn</span>
-          <span class="proj-tag">NumPy</span>
-          <span class="proj-tag">Flask</span>
-          <span class="proj-tag">MLP Classifier</span>
-        </div>
-        <div class="proj-links">
-          <a class="proj-link" href="https://github.com/kyliemarcisz/mnist-quantization" target="_blank" rel="noopener">⬡ GitHub</a>
-          <a class="proj-link" href="https://github.com/kyliemarcisz/mnist-quantization" target="_blank" rel="noopener">↗ Live Demo</a>
-        </div>
-      </div>
-
-      <!-- BERT QUANTIZATION -->
-      <div class="proj-card proj-bert appear">
-        <span class="proj-badge pb-rose">NLP · Transformer Compression</span>
-        <div class="proj-title">BERT Quantization</div>
-        <div class="proj-sub">DistilBERT Float32 → Int8 · Sentiment Analysis</div>
-        <div class="proj-desc">Dynamic post-training quantization of DistilBERT for movie review sentiment classification. Used PyTorch's quantization toolkit to convert all linear layers to int8 — benchmarked against the float32 baseline on accuracy, model size, and inference latency. 4× smaller, near-identical performance.</div>
-
-        <div class="proj-terminal">
-<span class="dim"># distilbert quantization benchmark</span>
-model   : <span class="val">distilbert-base-uncased</span>
-task    : <span class="val">sentiment (pos/neg)</span>
-float32 : <span class="val">92.4% acc</span> · <span class="val">255 MB</span>
-int8    : <span class="val">91.8% acc</span> · <span class="val">64 MB</span>  <span class="dim">✓ 4× compression</span>
-        </div>
-
-        <div class="proj-metrics">
-          <div class="proj-metric">
-            <div class="proj-metric-val">4×</div>
-            <div class="proj-metric-lbl">model size reduction</div>
-          </div>
-          <div class="proj-metric">
-            <div class="proj-metric-val">91.8%</div>
-            <div class="proj-metric-lbl">int8 accuracy</div>
-          </div>
-          <div class="proj-metric rose">
-            <div class="proj-metric-val">64 MB</div>
-            <div class="proj-metric-lbl">compressed size</div>
-          </div>
-        </div>
-
-        <div class="proj-progress">
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">Accuracy</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:92.4%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
-            <span class="proj-progress-val">92.4%</span>
-          </div>
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">Int8 acc</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:91.8%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
-            <span class="proj-progress-val">91.8%</span>
-          </div>
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">Size (f32)</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:100%;background:linear-gradient(90deg,#5B6E74,#5B6E74);"></div></div>
-            <span class="proj-progress-val">255 MB</span>
-          </div>
-          <div class="proj-progress-row">
-            <span class="proj-progress-lbl">Size (i8)</span>
-            <div class="proj-progress-bar"><div class="proj-progress-fill" style="width:25%;background:linear-gradient(90deg,#5B6E74,#819FA7);"></div></div>
-            <span class="proj-progress-val">64 MB</span>
-          </div>
-        </div>
-
-        <div class="proj-stack">
-          <span class="proj-tag">PyTorch</span>
-          <span class="proj-tag">Hugging Face</span>
-          <span class="proj-tag">DistilBERT</span>
-          <span class="proj-tag">Transformers</span>
-          <span class="proj-tag">Dynamic Quantization</span>
-        </div>
-        <div class="proj-links">
-          <a class="proj-link rose" href="https://github.com/kyliemarcisz/bert-quantization" target="_blank" rel="noopener">⬡ GitHub</a>
-        </div>
-      </div>
 
       <!-- DOWN -- RUTH AI x GOOGLE AI FOR SOCIAL GOOD HACKATHON -->
       <div class="proj-card proj-down appear">
@@ -174,6 +43,24 @@ int8    : <span class="val">91.8% acc</span> · <span class="val">64 MB</span>  
         <div class="proj-links">
           <a class="proj-link" href="https://github.com/lirachel24/Down" target="_blank" rel="noopener">&#11041; GitHub</a>
           <a class="proj-link rose" href="https://www.linkedin.com/feed/update/urn:li:activity:7510366956907089921/" target="_blank" rel="noopener">&#8599; LinkedIn Post</a>
+        </div>
+      </div>
+
+      <!-- FOURIER -->
+      <div class="proj-card proj-fourier appear">
+        <span class="proj-badge pb-gold">Personal &middot; Executive AI Tool</span>
+        <div class="proj-title">Fourier</div>
+        <div class="proj-sub">Executive AI Hub &middot; Cloudflare Pages + D1 &middot; 2026</div>
+        <div class="proj-desc">A themed personal hub that helps Microsoft executives decompose AI anxiety and map new AI tools into their actual workflow &mdash; onboarding, a tool tracker, an ROI engine, and a 90-day plan, built around the 2026 Work Trend Index shift from adoption to agency.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">Cloudflare Pages</span>
+          <span class="proj-tag">Pages Functions</span>
+          <span class="proj-tag">D1</span>
+          <span class="proj-tag">Vanilla JS</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://fourier-dg2.pages.dev" target="_blank" rel="noopener">&#8599; Live Site</a>
+          <a class="proj-link rose" href="https://github.com/kyliemarcisz/fourier" target="_blank" rel="noopener">&#11041; GitHub</a>
         </div>
       </div>
 
