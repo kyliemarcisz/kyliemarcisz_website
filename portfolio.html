@@ -168,35 +168,5 @@
 </footer>
 
 <script src="common.js"></script>
-<script>
-/* ── Animated progress bars ── */
-  document.querySelectorAll('.proj-progress-fill').forEach(function(b){
-    b.dataset.tw=b.style.width||'0%'; b.style.width='0%'; b.style.transition='none';
-  });
-  var barObs=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){
-      e.target.querySelectorAll('.proj-progress-fill').forEach(function(b,i){
-        setTimeout(function(){ b.style.transition='width 1.3s cubic-bezier(.25,.46,.45,.94)'; b.style.width=b.dataset.tw; },i*140+80);
-      });
-      barObs.unobserve(e.target);
-    }
-  });},{threshold:.25});
-  document.querySelectorAll('.proj-progress').forEach(function(p){barObs.observe(p);});
-
-  /* ── Terminal line-by-line reveal ── */
-  function revealTerminal(t){
-    if(t.dataset.typed) return; t.dataset.typed='1';
-    var lines=t.innerHTML.trim().split('\n').filter(function(l){return l.trim()!=='';});
-    t.innerHTML=lines.map(function(l,i){
-      return '<span class="t-line" style="animation-delay:'+(i*.16)+'s">'+l+'</span>';
-    }).join('');
-  }
-  var termObs=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){revealTerminal(e.target); termObs.unobserve(e.target);}
-  });},{threshold:.3});
-  document.querySelectorAll('.proj-terminal').forEach(function(t){termObs.observe(t);});
-
-  
-</script>
 </body>
 </html>
